@@ -75,8 +75,7 @@ if __name__ == '__main__':
     print(message_days)
     
     # plusplus推送
-    sckey = config.SCKEY
-    requests.get('http://www.pushplus.plus/send?token=' + sckey + '&title='+list1[1]+'&content=剩余'+int(list2[6])+'天')
+    requests.get('http://www.pushplus.plus/send?token=' + config.SCKEY + '&title='+list1[1]+'&content=剩余'+int(list2[6])+'天')
 
 
 

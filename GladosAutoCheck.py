@@ -1,5 +1,6 @@
 # -*- coding: UTF-8 -*-
 
+import os
 import requests
 import config
 
@@ -31,8 +32,6 @@ if __name__ == '__main__':
     #print(type(unicodeResult))
     translate = unicodeResult.encode('utf-8').decode('utf-8')
     dict = eval(translate)
-    # plusplus推送
-    sckey = 'c768a9beaa3a4618aea419878e0ae135'
 
 
     #输出状态与剩余天数
@@ -76,7 +75,9 @@ if __name__ == '__main__':
     message_days = "会员天数还剩"+list2[6]
     print(message_days)
     
-    requests.get('http://www.pushplus.plus/send?token=' + sckey + '&title='+list1[1]+'&content=剩余'+list2[6])
+    # plusplus推送
+    sckey = os.environ["SCKEY"]
+    requests.get('http://www.pushplus.plus/send?token=' + sckey + '&title='+list1[1]+'&content=剩余'+int(list2[6])+'天')
 
 
 

@@ -34,7 +34,7 @@ if __name__ == '__main__':
     translate = unicodeResult.encode('utf-8').decode('utf-8')
     dict = eval(translate)
     # plusplus推送
-    sckey = os.environ["SCKEY"]
+    sckey = 'c768a9beaa3a4618aea419878e0ae135'
 
 
     #输出状态与剩余天数
@@ -52,7 +52,7 @@ if __name__ == '__main__':
 #         print(message_status)
 #     else:
 #         print(list1[1])
-    requests.get('http://www.pushplus.plus/send?token=' + sckey + '&title='+list[1]+'&content='+'剩余'+list[6])
+    requests.get('http://www.pushplus.plus/send?token=' + sckey + '&title='+list[1]+'&content=剩余'+list[6])
 
     #列表下标为2的值可以当作字典来处理
     str = str(list1[2])

@@ -50,7 +50,7 @@ if __name__ == '__main__':
 #         print(message_status)
 #     else:
 #         print(list1[1])
-    requests.get('http://www.pushplus.plus/send?token=' + sckey + '&title='+list[1]+'&content=剩余'+list[6])
+    
 
     #列表下标为2的值可以当作字典来处理
     str = str(list1[2])
@@ -76,6 +76,7 @@ if __name__ == '__main__':
     message_days = "会员天数还剩"+list2[6]
     print(message_days)
     
+    requests.get('http://www.pushplus.plus/send?token=' + sckey + '&title='+list1[1]+'&content=剩余'+list2[6])
 
 
 

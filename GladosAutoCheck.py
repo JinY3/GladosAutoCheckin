@@ -1,5 +1,7 @@
 # -*- coding: UTF-8 -*-
 
+import json
+import os
 import requests
 import config
 
@@ -31,6 +33,8 @@ if __name__ == '__main__':
     #print(type(unicodeResult))
     translate = unicodeResult.encode('utf-8').decode('utf-8')
     dict = eval(translate)
+    # plusplus推送
+    sckey = os.environ["SCKEY"]
 
 
     #输出状态与剩余天数
@@ -40,14 +44,15 @@ if __name__ == '__main__':
 
     #取下标为1的列表值（签到状态）
     #print(list1[1])
-    if list1[1] == "Checkin! Get 1 Day":
-        message_status = "签到成功咯~会员天数+1"
-        print(message_status)
-    elif list1[1] == "Please Try Tomorrow":
-        message_status = "下次再来咯~"
-        print(message_status)
-    else:
-        print(list1[1])
+#     if list1[1] == "Checkin! Get 1 Day":
+#         message_status = "签到成功，会员天数+1"
+#         print(message_status)
+#     elif list1[1] == "Please Try Tomorrow":
+#         message_status = "今日已签到"
+#         print(message_status)
+#     else:
+#         print(list1[1])
+    requests.get('http://www.pushplus.plus/send?token=' + sckey + '&title='+list[1]+'&content='+'剩余'+list[6])
 
     #列表下标为2的值可以当作字典来处理
     str = str(list1[2])
@@ -72,6 +77,7 @@ if __name__ == '__main__':
     #取下标为6的值（会员天数）
     message_days = "会员天数还剩"+list2[6]
     print(message_days)
+    
 
 
 

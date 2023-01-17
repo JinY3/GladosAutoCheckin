@@ -1,6 +1,5 @@
 # -*- coding: UTF-8 -*-
 
-import os
 import requests
 import config
 
@@ -76,7 +75,7 @@ if __name__ == '__main__':
     print(message_days)
     
     # plusplus推送
-    sckey = os.environ["SCKEY"]
+    sckey = config.SCKEY
     requests.get('http://www.pushplus.plus/send?token=' + sckey + '&title='+list1[1]+'&content=剩余'+int(list2[6])+'天')
 
 

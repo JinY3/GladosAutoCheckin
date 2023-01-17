@@ -31,5 +31,6 @@ jobs:
       env:
         KOA_SESS: ${{ secrets.KOA_SESS }}
         KOA_SESS_SIG: ${{ secrets.KOA_SESS_SIG }}
+        SCKEY: ${{ secrets.SCKEY }}
       run: |
         python GladosAutoCheck.py

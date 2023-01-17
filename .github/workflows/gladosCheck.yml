@@ -33,5 +33,3 @@ jobs:
         KOA_SESS_SIG: ${{ secrets.KOA_SESS_SIG }}
       run: |
         python GladosAutoCheck.py
-
-

@@ -40,14 +40,16 @@ if __name__ == '__main__':
 
     #取下标为1的列表值（签到状态）
     #print(list1[1])
-#     if list1[1] == "Checkin! Get 1 Day":
-#         message_status = "签到成功，会员天数+1"
-#         print(message_status)
-#     elif list1[1] == "Please Try Tomorrow":
-#         message_status = "今日已签到"
-#         print(message_status)
-#     else:
-#         print(list1[1])
+    if list1[1] == "Checkin! Get 1 Day":
+        message_status = "签到成功，会员天数+1"
+        print(message_status)
+    elif list1[1] == "Please Try Tomorrow":
+        message_status = "今日已签到"
+        print(message_status)
+    else:
+        # plusplus推送
+        requests.get('http://www.pushplus.plus/send?token=' + config.SCKEY + '&title='+list1[1])
+        print(list1[1])
     
 
     #列表下标为2的值可以当作字典来处理
@@ -75,7 +77,8 @@ if __name__ == '__main__':
     print(message_days)
     
     # plusplus推送
-    requests.get('http://www.pushplus.plus/send?token=' + config.SCKEY + '&title='+list1[1]+'&content=剩余'+list2[6]+'天')
+#     requests.get('http://www.pushplus.plus/send?token=' + config.SCKEY + '&title='+list1[1]+'&content=剩余'+list2[6]+'天')
+    
 
 
 
